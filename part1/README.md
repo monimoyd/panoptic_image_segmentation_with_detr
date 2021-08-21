@@ -69,7 +69,6 @@ vi. Loss is calculated between ground truth and the generated panoptic segmentat
 
 Sample of panoptic segmented images can look like below
 
-![panoptic1](/part1/spanoptic_segmentation1.jfif)
 ![panoptic2](/part1/panoptic_segmentation2.jfif)
 
 
