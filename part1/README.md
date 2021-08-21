@@ -1,3 +1,5 @@
+# Panotic Segmenation using DETR
+
 In computer vision, Panoptic Segmentation is the task of breaking down the scene semantically so that each instance of a class, say a car 
 or person, be labeled uniquely. It requires that an algorithm understand the difference between amorphous stuff like the sky
 and ground and countable things like cars and persons.
