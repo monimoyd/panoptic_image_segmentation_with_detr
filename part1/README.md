@@ -4,7 +4,7 @@ and ground and countable things like cars and persons.
 
 The process for generating pantopic segmenation is given below:
 
-![segmentation_prcess](/segmtation_process.png)
+![segmentation_prcess](/part1/segmtation_process.png)
 
 
 The following are answers to questions asked as part of capstone part1
