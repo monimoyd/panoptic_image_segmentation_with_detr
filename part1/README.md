@@ -66,3 +66,10 @@ iv. All the high resolution masks are combined by the assinging each pixel value
 v. The Ground truth of panopic segmenation was generated using models like Mask RCNN
 
 vi. Loss is calculated between ground truth and the generated panoptic segmentation. Loss function is a combination of dice loss and focal loss 
+
+Sample of panoptic segmented images can look like below
+
+![panoptic1](/part1/spanoptic_segmentation1.jfif)
+![panoptic2](/part1/panoptic_segmentation2.jfif)
+
+
