@@ -4,7 +4,11 @@ In computer vision, Panoptic Segmentation is the task of breaking down the scene
 or person, be labeled uniquely. It requires that an algorithm understand the difference between amorphous stuff like the sky
 and ground and countable things like cars and persons.
 
-The process for generating pantopic segmenation is given below:
+Sample panoptic segmented image is as below:
+
+![image3](/part1/panoptic_image3.png)
+
+The process for generating pantopic segmentation is given below:
 
 ![segmentation_prcess](/part1/segmtation_process.png)
 
@@ -57,12 +61,9 @@ iii. FPN style convolution network is used to convert low resolution attention m
 
 iv. All the high resolution masks are combined by the assigning each pixel value corresponing the argmax correspding to highest logits
 
-v. The Ground truth of panopic segmenation was generated using models like Mask RCNN
+v. The Ground truth of panopic segmenation was generated using models like UPSNet / Mask RCNN
 
 vi. Loss is calculated between ground truth and the generated panoptic segmentation. Loss function is a combination of dice loss and focal loss 
 
-Sample of panoptic segmented images can look like below
-
-![panoptic2](/part1/panoptic_segmentation2.jfif)
 
 
