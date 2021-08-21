@@ -4,6 +4,8 @@ and ground and countable things like cars and persons.
 
 The process for generating pantopic segmenation is given below:
 
+![segmentation_prcess](/segmtation_process.png)
+
 
 The following are answers to questions asked as part of capstone part1
 
@@ -25,9 +27,11 @@ final encoded image feature dimension are d x H/32 x W/32
 ## WHAT DO WE DO HERE?
 
 The features extracted from the image of dimension are flattened to d x (H/32 x W/32) and  supplements it with a positional
-encoding before passing it into a transformer encoder. The transformer decoder then takes as input a
-fixed number of learned positional embeddings, which we call object queries, and additionally attends to the encoder output and 
-calculates attention score for each object embedding. As each object query has dimension d and there are N object queries, 
+encoding before passing it into a transformer encoder. The transformer decoder then takes as input a fixed number of learned positional
+embeddings, which we call object queries, and additionally attends to the encoder output and calculates attention score for each 
+object embedding.
+
+As each object query has dimension d and there are N object queries, 
 total dimension of box embedding is dxN
 
 As there are N object queries and M head attention, the output attention score is of dimension:
@@ -50,8 +54,13 @@ mask of dimension N x H/4 x W/4. The map is high resolution where each pixel con
 The steps are as below:
 
 i. Convoltuion network is used to get the features from the image
+
 ii. The features are given to multihead transformer, which uses object queries to generate low resolution attention maps
+
 iii. FPN style convolution network is used to convert low resolution attention maps to high resolution mask
-iv. All the high resolution masks are combined by the assinging each pixel value corresponing the argmax correspding to highest logits 
+
+iv. All the high resolution masks are combined by the assinging each pixel value corresponing the argmax correspding to highest logits
+
 v. The Ground truth of panopic segmenation was generated using models like Mask RCNN
-vi. Loss is calculated between ground truth and the generated panoptic segmentation 
+
+vi. Loss is calculated between ground truth and the generated panoptic segmentation. Loss function is a combination of dice loss and focal loss 
