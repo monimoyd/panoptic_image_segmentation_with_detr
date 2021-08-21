@@ -33,7 +33,7 @@ final encoded image feature dimension are d x H/32 x W/32
 ## WHAT DO WE DO HERE?
 
 The features extracted from the image of dimension are flattened to d x (H/32 x W/32) and  it is supplemented with a positional
-encoding before passing it into a transformer encoder. The transformer decoder takes fixed number of learned positional embeddings, which we call object queries, and additionally attends to the encoder output and calculates attention score for each object embedding.
+embedding before passing it into a transformer encoder. The transformer decoder takes fixed number of learned positional embeddings, which we call object queries, and additionally attends to the encoder output and calculates attention score for each object embedding.
 
 As each object query has dimension d and there are N object queries, total dimension of box embedding is dxN
 
@@ -46,7 +46,7 @@ N x M x H/32 x W/32
 The previous steps generate attention mask. These attention masks are low resolution, so it needs to be transformed to the high resolution so that each mask corresponds to one pixel in image.  
 
 For doing this a FPN style convolution network is used. FPN style convolution network concatenates attention maps from different heads
-using ResNet5, ollowed by upsampling followed by ResNet4 , Followed by upsampling, followed by ResNet3 follwed by upsampling, followed by ResNet2 and finally generates map of dimension N x H/4 x W/4. The map is high resolution where each pixel contains binary logit belonging to the mask
+using ResNet5, followed by upsampling, followed by ResNet4 , followed by upsampling, followed by ResNet3 followed by upsampling, followed by ResNet2 and finally generates map of dimension N x H/4 x W/4. The map is high resolution where each pixel contains binary logit belonging to the mask
 
 
 ## EXPLAIN THESE STEPS?
