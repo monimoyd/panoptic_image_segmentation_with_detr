@@ -55,7 +55,7 @@ The steps are as below:
 
 i. Convolution network (RESNET 50) is used to extract the features from the input image
 
-ii. The features are given to multihead transformer, whose decoder which uses pretrained object queries to generate low resolution attention maps. The pretrained object queries are generated while training bounding boxes for object detection and taking embedding for those objects having prediction threshold more than 0.85
+ii. The features are given to multihead transformer, whose decoder uses pretrained object queries to generate low resolution attention maps. The pretrained object queries are generated while training bounding boxes for object detection and taking embedding for those objects having prediction threshold more than 0.85
 
 iii. FPN style convolution network is used to convert low resolution attention maps to high resolution mask
 
