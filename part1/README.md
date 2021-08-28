@@ -61,7 +61,7 @@ iii. FPN style convolution network is used to convert low resolution attention m
 
 iv. All the high resolution masks are combined by the assigning each pixel value  the argmax corresponding to highest logits
 
-v. The Ground truth of panoptic segmentation was generated previously by predicting segments from stuffs from Coco datasets using a pretrained model combining with our annonated segments 
+v. The Ground truth of panoptic segmentation from image was generated previously by predicting segments from stuffs from Coco datasets using a pretrained model combining with our annonated segments 
 
 vi. Loss is calculated between ground truth and the generated panoptic segmentation. Loss function is a combination of dice loss and focal loss. AdamW is used as optimizer. 
 
