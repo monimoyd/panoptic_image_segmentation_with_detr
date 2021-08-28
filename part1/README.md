@@ -55,15 +55,15 @@ The steps are as below:
 
 i. Convolution network (RESNET 50) is used to extract the features from the input image
 
-ii. The features are given to multihead transformer, which uses object queries to generate low resolution attention maps
+ii. The features are given to multihead transformer, which uses pretrained object queries to generate low resolution attention maps. The pretrained object queries are generated while training bounding boxes for object separately and taking those object embedding having threshold more than 0.85
 
 iii. FPN style convolution network is used to convert low resolution attention maps to high resolution mask
 
 iv. All the high resolution masks are combined by the assigning each pixel value corresponing the argmax correspding to highest logits
 
-v. The Ground truth of panopic segmenation was generated using models like UPSNet / Mask RCNN
+v. The Ground truth of panoptic segmentation was generated previously by predicting segments from stuffs from Coco datasets using a pretrained model combining with our annonated segments 
 
-vi. Loss is calculated between ground truth and the generated panoptic segmentation. Loss function is a combination of dice loss and focal loss 
+vi. Loss is calculated between ground truth and the generated panoptic segmentation. Loss function is a combination of dice loss and focal loss. AdamW is used as optimizer. 
 
 
 
