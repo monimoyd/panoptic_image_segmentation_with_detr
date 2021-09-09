@@ -12,7 +12,6 @@ https://drive.google.com/file/d/1IsK268zLnXB2Qq0X2LgNDwBZRuVwvjRx/view?usp=shari
 Jupyter Notebook link:
 
 
-
 Major Highlights:
 
 -  Used Panoptic DETR is used to generated ground truth of stuff for images givens
@@ -106,9 +105,20 @@ While generating csv files, Any of the image which is not RGB  (like RGBA or gre
 All the intermediate csv files are combined using into two jsons, custom-val.json and custom-train.json
 using Jupyter notebook. While combining al lthe csv files , each image is given a unique id with format category name concated with image id.
 
+## III. Workflow
+Workflow is explained using the diagram below:
+
+![workflow](/part2/images/workflow.png) 
 
 
-## Training
+Here all class jsons and the stuff prediction using panoptic segmentation are combined to a corresponding class csv file.
+In addition stuff annotation for coco validation dataset is also converted to coco_stuff.csv. All the csvs are combined into 
+two annotation json files custom-train.json and custom-val.json. From the processing valid images from engineering materials
+dataset 90% are randomly assigned to training and 10% to validation. However all the images from Coco validation dataset are
+assigned to training only
+
+
+## IV. Training
 
 
 As the combined image size is very large, it is split into multiple zip files and then unzipped using the structure below
@@ -135,7 +145,7 @@ Number of classes: 140
 
 
 
-## Results:
+## V. Results:
 
 The training is still going on as of today, I took some model weights after 6th epoch and applied prediction on
 validation Dataset as below
@@ -228,7 +238,7 @@ validation Dataset as below
 ![image8_p](/part2/images/image_6_predicted.png)
 
 
-## Plots:
+## VI. Plots:
 
 The following are plots from 6th epoch
 
@@ -249,7 +259,7 @@ The following are plots from 6th epoch
 
 
 
-##  Issues faced
+##  VII. Issues faced
 
 ### i. Json marshalling issue
 
