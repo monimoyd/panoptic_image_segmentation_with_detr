@@ -1,4 +1,4 @@
-# Predicting Bounding Box for Enginerring Materials
+# Predicting Bounding Box for Enginering Materials Dataset
 In this project I have Using Deep Learning Techinques to predict bounding boxes for Engineering materials
 
 # I. Problem Statement
@@ -21,7 +21,6 @@ Major Highlights:
 
 
 
-
 ## Running the code
 
 For Training, you can use download the code
@@ -40,18 +39,18 @@ The engineering material dataset has 48 categories of various engineering materi
 ### Structure of the dataset
 
 .
-├── class_name_1 
-│   ├── class_details.txt 
-│   ├── coco.json 
-│   └── images 
-│       ├── img_000.png 
-│       ├── img_001.png 
-├── class_name_2 
-│   ├── class_details.txt 
-│   ├── coco.json 
-│   └── images 
-│       ├── img_000.png 
-│       ├── img_001.png 
+├── class_name_1   
+│   ├── class_details.txt   
+│   ├── coco.json   
+│   └── images   
+│       ├── img_000.png   
+│       ├── img_001.png   
+├── class_name_2   
+│   ├── class_details.txt   
+│   ├── coco.json   
+│   └── images   
+│       ├── img_000.png   
+│       ├── img_001.png   
 .
 
 
@@ -80,23 +79,23 @@ pycocotools mask.encode API.
 
 Categories used for engineering dataset are as below:
 
-0 - Misc Stuff (these are all the Coco thing object predicted by DETR panoptic segmentation code
-1-48 - Classes used for engineering materials
-49 - 182 - Coco Stuff objects mapped using the formula (4892 + coco stuff category id - 43).
+0 - Misc Stuff (these are all the Coco thing object predicted by DETR panoptic segmentation code  
+1-48 - Classes used for engineering materials  
+49 -140 - Coco Stuff objects mapped using the formula (coco stuff category id - 43). For example for banner category id is 49 which is category id 92 in Coco
 
 
 For each annotation json provided for each category an intermediate csv file with fields as below:
 
-id - A unique annotation id
-image_id - A unique image id
-image_path - path where image is lying
-width - width of image
-height - height of image
-bbox - Bounding box
-segment_map - Segmentation map converted to RLE format
-source - Source from where record is generated. 1 for annotation file, 2 for predicted from DETR panoptic segmentation code, 3 for coco stuff dataset
-area - Area of bounding box
-segment_polygon - Polygon coordinates for segments
+id - A unique annotation id  
+image_id - A unique image id  
+image_path - path where image is lying  
+width - width of image  
+height - height of image  
+bbox - Bounding box  
+segment_map - Segmentation map converted to RLE format  
+source - Source from where record is generated. 1 for annotation file, 2 for predicted from DETR panoptic segmentation code, 3 for coco stuff dataset  
+area - Area of bounding box  
+segment_polygon - Polygon coordinates for segments  
 
 
 As our dataset may not have all the stuff, so the coco validation stuff dataset is added for training and for this also an intermediate
@@ -115,23 +114,24 @@ using Jupyter notebook. While combining al lthe csv files , each image is given 
 As the combined image size is very large, it is split into multiple zip files and then unzipped using the structure below
 
 
-/content/data/custom
-├ annotations/  # JSON annotations
-│  ├ annotations/custom_train.json
-│  └ annotations/custom_val.json
-├ train2017/    # training images
-└ val2017/      # validation images
+/content/data/custom  
+├ annotations/  # JSON annotations  
+│  ├ annotations/custom_train.json  
+│  └ annotations/custom_val.json  
+├ train2017/    # training images  
+└ val2017/      # validation images  
 
 
 
-The DETR code used for training from repository 
+The DETR code used for training from repository https://github.com/woctezuma/detr.git and pretrained weights are loaded from 
+URL https://dl.fbaipublicfiles.com/detr/detr-r50-e632da11.pth' 
 
 
 Hyperparameters:
 
 Number of queries: 30
 Learning Rate: 1e-5
-
+Number of classes: 140
 
 
 
@@ -249,7 +249,36 @@ The following are plots from 6th epoch
 
 
 
-# IX. Issues faced
+##  Issues faced
+
+### i. Json marshalling issue
+
+While converting to json from CSV, faced Exception that says marshalling can not be performed because int64 is used. This is
+because when I loaded dataframe from csv file and converted to basic type it was numpy.int64 format which JSON
+could not marshal. I need to convert the type explicitly to int to fix the issue 
+
+### ii. Changin number of queries
+
+I used number of queries as 30 specified it as a paramer in main.py. While inferring when I loaded the model and loaded
+the weights from checkpoint, I was getting Runtime Exception of dimension mismatch as the model query embedding has dimension
+(30, 256) but it was expecting dimension (100, 256)
+
+To solve this, I explicitly changed the query embedding dimension using the following lines:
+
+model.num_queries=30
+model.query_embed = torch.nn.modules.sparse.Embedding(30, 256)
+
+Also before training, I used teh additional line below:
+
+del checkpoint["model"]["query_embed.weight"]
+
+
+### iii. Junks character in segmentation
+
+While checking the segmentation field in coco stuff annotation, I initially thought these are junk characters. After study
+and discussions, I realized these are mask encoded in RLE format
+
+
 
 
 
