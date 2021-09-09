@@ -9,7 +9,7 @@ The dataset is available in link below:
 
 https://drive.google.com/file/d/1IsK268zLnXB2Qq0X2LgNDwBZRuVwvjRx/view?usp=sharing
 
-Jupyter Notebook link:
+
 
 
 Major Highlights:
@@ -22,16 +22,30 @@ Major Highlights:
 
 ## Running the code
 
-For Training, you can use download the code
+You can use download the code
 
-git clone https://github.com/monimoyd/PredictingMaskAndDepthUsingDeepLearning.git 
+git clone https://github.com/monimoyd/panoptic_image_segmentation_with_detr.git 
 
-Alternatively , if you directly want to use the Jupyter Notebook, please take API from the google drive link:
+Jupyter Notebook link:
 
-https://drive.google.com/drive/folders/1YTvb7V0eDfn5MZwBbc4msFkWKH5ArotI?usp=sharing 
+There are two notebooks:
 
+engineering_dataset_finetune_detr_train.ipynb : Used for training ( Training was still going on when I downloaded the notebook)
+engineering_dataset_finetune_detr_prediction.ipynb : Used for training ( I used checkpoint weights after 6th epoch)
+ 
+## II. DETR
 
-## II. Data Cleaning and Data Loading
+In this project I have used DETR a deep learning based transformer model to predict bounding boxes for Engineering Materials
+Dataset. DETR which stands for DEtection TRansformer is developed by Facebook AI and probably the most effective Computer Vision
+ Algorithm which is empowered with Object classification, Object Detection, Semantic Segmentation and many other Deep learning 
+ tasks. It extends the Transformer based architecture by infusing more intelligence w.r.t adding many object queries to the
+ Decoder Architecture.
+ 
+ More details about DETR can be found in URL below:
+ 
+ https://github.com/nkanungo/EVA6_DETR#readme
+
+## IIi. Data Cleaning and Data Loading
 
 The engineering material dataset has 48 categories of various engineering materials like cu_piping , adhesives etc.
 
@@ -97,7 +111,7 @@ area - Area of bounding box
 segment_polygon - Polygon coordinates for segments  
 
 
-As our dataset may not have all the stuff, so the coco validation stuff dataset is added for training and for this also an intermediate
+As the engineering materials dataset does not  have all the stuff, so the coco validation stuff dataset is added for training and for this also an intermediate
 csv file is created
 
 While generating csv files, Any of the image which is not RGB  (like RGBA or grey image) or images in WEBP format are ignored.
@@ -105,7 +119,7 @@ While generating csv files, Any of the image which is not RGB  (like RGBA or gre
 All the intermediate csv files are combined using into two jsons, custom-val.json and custom-train.json
 using Jupyter notebook. While combining al lthe csv files , each image is given a unique id with format category name concated with image id.
 
-## III. Workflow
+## IV. Workflow
 Workflow is explained using the diagram below:
 
 ![workflow](/part2/images/workflow.png) 
@@ -118,7 +132,7 @@ dataset 90% are randomly assigned to training and 10% to validation. However all
 assigned to training only
 
 
-## IV. Training
+## V. Training
 
 
 As the combined image size is very large, it is split into multiple zip files and then unzipped using the structure below
@@ -145,7 +159,7 @@ Number of classes: 140
 
 
 
-## V. Results:
+## VI. Results:
 
 The training is still going on as of today, I took some model weights after 6th epoch and applied prediction on
 validation Dataset as below
@@ -238,7 +252,7 @@ validation Dataset as below
 ![image8_p](/part2/images/image_6_predicted.png)
 
 
-## VI. Plots:
+## VII. Plots:
 
 The following are plots from 6th epoch
 
@@ -259,7 +273,7 @@ The following are plots from 6th epoch
 
 
 
-##  VII. Issues faced
+##  VIII. Issues faced
 
 ### i. Json marshalling issue
 
@@ -278,17 +292,25 @@ To solve this, I explicitly changed the query embedding dimension using the foll
 model.num_queries=30
 model.query_embed = torch.nn.modules.sparse.Embedding(30, 256)
 
-Also before training, I used teh additional line below:
+Also before training, I used the additional line below:
 
 del checkpoint["model"]["query_embed.weight"]
 
 
-### iii. Junks character in segmentation
+### iii. Junk characters in segmentation
 
 While checking the segmentation field in coco stuff annotation, I initially thought these are junk characters. After study
 and discussions, I realized these are mask encoded in RLE format
 
 
+
+
+##  IX. Conclusion
+
+
+In this project I have learned how to prepare engineering materials dataset, right from image collection to annotation
+using CVT tool. Next, I cleaned and prepared dataset by applying DETR panoptic segmentation code to get ground truth for 
+stuff. Next, I did fine tuning using DETR model. This project gave me exposure to end to end Object detection.
 
 
 
