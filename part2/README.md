@@ -21,10 +21,6 @@ Major Highlights:
 
 
 
-- Only 5 epochs are used to achive the result
-
-
-
 
 ## Running the code
 
@@ -44,18 +40,18 @@ The engineering material dataset has 48 categories of various engineering materi
 ### Structure of the dataset
 
 .
-├── class_name_1
-│   ├── class_details.txt
-│   ├── coco.json
-│   └── images
-│       ├── img_000.png
-│       ├── img_001.png
-├── class_name_2
-│   ├── class_details.txt
-│   ├── coco.json
-│   └── images
-│       ├── img_000.png
-│       ├── img_001.png
+├── class_name_1 
+│   ├── class_details.txt 
+│   ├── coco.json 
+│   └── images 
+│       ├── img_000.png 
+│       ├── img_001.png 
+├── class_name_2 
+│   ├── class_details.txt 
+│   ├── coco.json 
+│   └── images 
+│       ├── img_000.png 
+│       ├── img_001.png 
 .
 
 
@@ -141,93 +137,93 @@ Learning Rate: 1e-5
 
 ## Results:
 
-The training is still going on as of today, I took some intermediate results after 6th epoch from validation Dataset as below
+The training is still going on as of today, I took some model weights after 6th epoch and applied prediction on
+validation Dataset as below
 
 
+### i.
 
-###i.
-
-Ground truth with bounding boxes:
+#### Ground truth with bounding boxes:
 
 ![image1_g](/part2/images/image_1_ground_truth.png)
 
 
-Predicted bounding boxes:
+#### Predicted bounding boxes:
 
 ![image1_p](/part2/images/image_1_predicted.png)
 
 
-###ii.
+### ii.
 
-Ground truth with bounding boxes:
+#### Ground truth with bounding boxes:
 
 ![image2_g](/part2/images/image_2_ground_truth.png)
 
 
-Predicted bounding boxes:
+#### Predicted bounding boxes:
 
 ![image2_p](/part2/images/image_2_predicted.png)
 
 
 
-###iii.
+### iii.
 
-Ground truth with bounding boxes:
+#### Ground truth with bounding boxes:
 
 ![image3_g](/part2/images/image_3_ground_truth.png)
 
 
-Predicted bounding boxes:
+#### Predicted bounding boxes:
 
 ![image3_p](/part2/images/image_3_predicted.png)
 
 
 
-###iv.
+### iv.
 
-Ground truth with bounding boxes:
+#### Ground truth with bounding boxes:
 
 ![image4_g](/part2/images/image_4_ground_truth.png)
 
 
-Predicted bounding boxes:
+#### Predicted bounding boxes:
 
 ![image4_g](/part2/images/image_4_predicted.png)
 
 
-###v.
+### v.
 
-Ground truth with bounding boxes:
+#### Ground truth with bounding boxes:
 
 ![image4_g](/part2/images/image_5_ground_truth.png)
 
 
-Predicted bounding boxes:
+#### Predicted bounding boxes:
 
 ![image5_g](/part2/images/image_5_predicted.png)
 
 
 
-###vi.
+### vi.
 
-Ground truth with bounding boxes:
+#### Ground truth with bounding boxes:
 
 ![image6_g](/part2/images/image_6_ground_truth.png)
 
 
-Predicted bounding boxes:
+#### Predicted bounding boxes:
 
 ![image6_g](/part2/images/image_6_predicted.png)
 
 
-###vii.
+### vii.
 
-Ground truth with bounding boxes:
+#### Ground truth with bounding boxes:
 
 ![image7_g](/part2/images/image_6_ground_truth.png)
 
 
-Predicted bounding boxes:
+#### Predicted bounding boxes:
 
 ![image8_p](/part2/images/image_6_predicted.png)
 
@@ -236,44 +232,24 @@ Predicted bounding boxes:
 
 The following are plots from 6th epoch
 
-### i. Loss Plot
+### i. Loss and mAP Plots
 
 ![image9](/part2/images/loss_plot.png)
 
 
-### ii. mAP Plot
-
-![image10](images/mAP_plot.png]
-
-
-### iii. Loss CE Plot
-
-![image11](/part2/images/loss_ce_plot.png)
-
-### iv. Loss Bounding Box Plot
+### ii. Loss CE, Loss Bounding Box, Loss GIOU Plots
 
 ![image12](/part2/images/loss_box_plot.png)
 
 
-### v. Loss GIOU Plot
 
-![image12](/part2/images/loss_giou_plot.png)
-
-
-### vi. Class Error Plot
+### iii. Class Error, Cardinality Error Unscaled plot Plot
 
 ![image12](/part2/images/class_error_plot.png)
 
-### vii. Cardinality Error Unscaled plot
-
-![image13](/part2/images/cardinality_error_unscaled.png)
 
 
-
-
-
-
-# IX. Conclusion
+# IX. Issues faced
 
 
 
