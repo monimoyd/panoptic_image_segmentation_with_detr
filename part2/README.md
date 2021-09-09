@@ -149,12 +149,12 @@ The training is still going on as of today, I took some intermediate results aft
 
 Ground truth with bounding boxes:
 
-![image1_g](/images/image_1_ground_truth.png]
+![image1_g](images/image_1_ground_truth.png]
 
 
 Predicted bounding boxes:
 
-![image1_p](/images/image_1_predicted.png]
+![image1_p](images/image_1_predicted.png]
 
 
 ###ii.
@@ -224,12 +224,12 @@ Predicted bounding boxes:
 
 Ground truth with bounding boxes:
 
-![image7_g](/images/image_6_ground_truth.png]
+![image7_g](images/image_6_ground_truth.png]
 
 
 Predicted bounding boxes:
 
-![image8_p](/images/image_6_predicted.png]
+![image8_p](images/image_6_predicted.png]
 
 
 ## Plots:
@@ -238,12 +238,12 @@ The following are plots from 6th epoch
 
 ### i. Loss Plot
 
-![image9](/images/loss_plot.png]
+![image9](images/loss_plot.png]
 
 
 ### ii. mAP Plot
 
-![image10](/images/mAP_plot.png]
+![image10](images/mAP_plot.png]
 
 
 ### iii. Loss CE Plot
@@ -257,16 +257,16 @@ The following are plots from 6th epoch
 
 ### v. Loss GIOU Plot
 
-![image12](/images/loss_giou_plot.png]
+![image12](images/loss_giou_plot.png]
 
 
 ### vi. Class Error Plot
 
-![image12](/images/class_error_plot.png]
+![image12](images/class_error_plot.png]
 
 ### vii. Cardinality Error Unscaled plot
 
-![image13](/images/cardinality_error_unscaled.png]
+![image13](images/cardinality_error_unscaled.png]
 
 
 
