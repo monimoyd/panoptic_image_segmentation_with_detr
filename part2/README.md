@@ -149,24 +149,24 @@ The training is still going on as of today, I took some intermediate results aft
 
 Ground truth with bounding boxes:
 
-![image1_g](/images/image_1_ground_truth.png]
+![image1_g](/part2/images/image_1_ground_truth.png)
 
 
 Predicted bounding boxes:
 
-![image1_p](/images/image_1_predicted.png)
+![image1_p](/part2/images/image_1_predicted.png)
 
 
 ###ii.
 
 Ground truth with bounding boxes:
 
-![image2_g](/images/image_2_ground_truth.png)
+![image2_g](/part2/images/image_2_ground_truth.png)
 
 
 Predicted bounding boxes:
 
-![image2_p](/images/image_2_predicted.png]
+![image2_p](/part2/images/image_2_predicted.png)
 
 
 
@@ -174,12 +174,12 @@ Predicted bounding boxes:
 
 Ground truth with bounding boxes:
 
-![image3_g](/images/image_3_ground_truth.png]
+![image3_g](/part2/images/image_3_ground_truth.png)
 
 
 Predicted bounding boxes:
 
-![image3_p](/images/image_3_predicted.png]
+![image3_p](/part2/images/image_3_predicted.png)
 
 
 
@@ -187,24 +187,24 @@ Predicted bounding boxes:
 
 Ground truth with bounding boxes:
 
-![image4_g](/images/image_4_ground_truth.png]
+![image4_g](/part2/images/image_4_ground_truth.png)
 
 
 Predicted bounding boxes:
 
-![image4_g](/images/image_4_predicted.png]
+![image4_g](/part2/images/image_4_predicted.png)
 
 
 ###v.
 
 Ground truth with bounding boxes:
 
-![image4_g](/images/image_5_ground_truth.png]
+![image4_g](/part2/images/image_5_ground_truth.png)
 
 
 Predicted bounding boxes:
 
-![image5_g](/images/image_5_predicted.png]
+![image5_g](/part2/images/image_5_predicted.png)
 
 
 
@@ -212,24 +212,24 @@ Predicted bounding boxes:
 
 Ground truth with bounding boxes:
 
-![image6_g](/images/image_6_ground_truth.png]
+![image6_g](/part2/images/image_6_ground_truth.png)
 
 
 Predicted bounding boxes:
 
-![image6_g](/images/image_6_predicted.png]
+![image6_g](/part2/images/image_6_predicted.png)
 
 
 ###vii.
 
 Ground truth with bounding boxes:
 
-![image7_g](images/image_6_ground_truth.png]
+![image7_g](/part2/images/image_6_ground_truth.png)
 
 
 Predicted bounding boxes:
 
-![image8_p](images/image_6_predicted.png]
+![image8_p](/part2/images/image_6_predicted.png)
 
 
 ## Plots:
@@ -238,7 +238,7 @@ The following are plots from 6th epoch
 
 ### i. Loss Plot
 
-![image9](images/loss_plot.png]
+![image9](/part2/images/loss_plot.png)
 
 
 ### ii. mAP Plot
@@ -248,25 +248,25 @@ The following are plots from 6th epoch
 
 ### iii. Loss CE Plot
 
-![image11](/images/loss_ce_plot.png]
+![image11](/part2/images/loss_ce_plot.png)
 
 ### iv. Loss Bounding Box Plot
 
-![image12](/images/loss_box_plot.png]
+![image12](/part2/images/loss_box_plot.png)
 
 
 ### v. Loss GIOU Plot
 
-![image12](images/loss_giou_plot.png]
+![image12](/part2/images/loss_giou_plot.png)
 
 
 ### vi. Class Error Plot
 
-![image12](images/class_error_plot.png]
+![image12](/part2/images/class_error_plot.png)
 
 ### vii. Cardinality Error Unscaled plot
 
-![image13](images/cardinality_error_unscaled.png]
+![image13](/part2/images/cardinality_error_unscaled.png)
 
 
 
