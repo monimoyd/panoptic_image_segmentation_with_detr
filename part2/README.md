@@ -149,19 +149,19 @@ The training is still going on as of today, I took some intermediate results aft
 
 Ground truth with bounding boxes:
 
-![image1_g](images/image_1_ground_truth.png]
+![image1_g](/images/image_1_ground_truth.png]
 
 
 Predicted bounding boxes:
 
-![image1_p](images/image_1_predicted.png]
+![image1_p](/images/image_1_predicted.png)
 
 
 ###ii.
 
 Ground truth with bounding boxes:
 
-![image2_g](/images/image_2_ground_truth.png]
+![image2_g](/images/image_2_ground_truth.png)
 
 
 Predicted bounding boxes:
