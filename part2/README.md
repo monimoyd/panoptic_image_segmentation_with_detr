@@ -32,14 +32,20 @@ There are two notebooks:
 
 engineering_dataset_finetune_detr_train.ipynb : Used for training ( Training was still going on when I downloaded the notebook)
 engineering_dataset_finetune_detr_prediction.ipynb : Used for training ( I used checkpoint weights after 6th epoch)
+
+The trained model can be found in link below:
+
+https://drive.google.com/file/d/1U_X54jMYdghYmIqqfSCOSuYZbNl-VwPu/view?usp=sharing
  
-## II. DETR
+## II. DETR and Loss functions Used
 
 In this project I have used DETR a deep learning based transformer model to predict bounding boxes for Engineering Materials
 Dataset. DETR which stands for DEtection TRansformer is developed by Facebook AI and probably the most effective Computer Vision
  Algorithm which is empowered with Object classification, Object Detection, Semantic Segmentation and many other Deep learning 
  tasks. It extends the Transformer based architecture by infusing more intelligence w.r.t adding many object queries to the
  Decoder Architecture.
+ 
+ To train the algorithm and evaluate its performance, a loss function is defined which is a sum of negative log-likelihood loss for classification and a combination of L1 (absolute difference) and generalized Intersection over Union (IoU) losses for the bounding box coordinates. The loss is based on matching each ground truth object to a predicted object, for which the Hungarian algorithm is used.
  
  More details about DETR can be found in URL below:
  
@@ -158,7 +164,6 @@ Learning Rate: 1e-5
 Number of classes: 140
 
 
-
 ## VI. Results:
 
 The training is still going on as of today, I took some model weights after 6th epoch and applied prediction on
@@ -252,7 +257,7 @@ validation Dataset as below
 ![image8_p](/part2/images/image_6_predicted.png)
 
 
-## VII. Plots:
+## VII. Evalutation Metrics Plots:
 
 The following are plots from 6th epoch
 
