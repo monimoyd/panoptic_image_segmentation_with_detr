@@ -185,7 +185,7 @@ Number of classes: 140
 
 #### Ground truth with bounding boxes:
 
-![image2_g](/part2/images/image1_new_ground_truth.png)
+![image2_g](/part2/images/image2_new_ground_truth.png)
 
 
 #### Predicted bounding boxes:
@@ -253,7 +253,44 @@ Number of classes: 140
 
 #### Predicted bounding boxes:
 
-![image8_p](/part2/images/iimage7_new_predicted.png)
+![image8_p](/part2/images/image7_new_predicted.png)
+
+
+### viii.
+
+#### Ground truth with bounding boxes:
+
+![image7_g](/part2/images/image8_new_ground_truth.png)
+
+
+#### Predicted bounding boxes:
+
+![image8_p](/part2/images/image8_new_predicted.png)
+
+
+### ix.
+
+#### Ground truth with bounding boxes:
+
+![image7_g](/part2/images/image9_new_ground_truth.png)
+
+
+#### Predicted bounding boxes:
+
+![image8_p](/part2/images/image9_new_predicted.png)
+
+
+### x.
+
+#### Ground truth with bounding boxes:
+
+![image7_g](/part2/images/image10_new_ground_truth.png)
+
+
+#### Predicted bounding boxes:
+
+![image8_p](/part2/images/image10_new_predicted.png)
+
 
 
 ## VII. Evalutation Metrics Plots:
