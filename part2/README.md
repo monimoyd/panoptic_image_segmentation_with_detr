@@ -51,7 +51,7 @@ Dataset. DETR which stands for DEtection TRansformer is developed by Facebook AI
  
  https://github.com/nkanungo/EVA6_DETR#readme
 
-## IIi. Data Cleaning and Data Loading
+## III. Data Cleaning and Data Loading
 
 The engineering material dataset has 48 categories of various engineering materials like cu_piping , adhesives etc.
 
@@ -162,6 +162,12 @@ Hyperparameters:
 Number of queries: 40
 Learning Rate: 1e-5
 Number of classes: 140
+
+As the classes provided were imbalanced, To balance it during the training, I used the following techniques
+
+i. While adding images from Coco validation dataset, I made sure that number of objects for a particular category is limited to maximum 500
+ii. For minoryt classes, added more images from Coco training dataset
+iii. As misc_stuff category has more objects, I changed the class weight for the misc_stuff to 0.1 during training
 
 
 ## VI. Results:
