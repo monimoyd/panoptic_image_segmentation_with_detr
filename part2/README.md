@@ -170,25 +170,7 @@ ii. For minoryt classes, added more images from Coco training dataset
 iii. As misc_stuff category has more objects, I changed the class weight for the misc_stuff to 0.1 during training
 
 
-## VI. Metrics Used and  Results:
-
-Various metrics used are:
-
-### Loss:
-
-This is the total loss including classification loss, bounding box loss and giou loss
-
-### mAP : 
-is Mean Average Precision. Its use is different in the field of Information Retrieval (Reference [1] [2] )and Multi-Class classification (Object Detection) settings. To calculate it for Object Detection, you calculate the average precision for each class in your data based on your model predictions. Average precision is related to the area under the precision-recall curve for a class. Then Taking the mean of these average individual-class-precision gives you the Mean Average Precision. 
-
-### GIOU Loss:
-GIOU is a improved version of IoU loss
-In IoU, where there is no intersection, IoU has no value and therefore no gradient. GIoU however, is always differentiable.
-GIOU , which is formulated as follows:
-
-GIoU=|A∩B||A∪B|−|C∖(A∪B)||C|=IoU−|C∖(A∪B)||C|
-Where A and B are the prediction and ground truth bounding boxes. C is the smallest convex hull that encloses both A and B. 
-
+## VI.  Results:
 
 
 ### i.
@@ -315,7 +297,25 @@ Where A and B are the prediction and ground truth bounding boxes. C is the small
 
 
 
-## VII. Evalutation Metrics Plots:
+## VII. Evalutation Metrics Used and Plots:
+
+Various metrics used are:
+
+### Loss:
+
+This is the total loss including classification loss, bounding box loss and giou loss
+
+### mAP : 
+is Mean Average Precision. Its use is different in the field of Information Retrieval (Reference [1] [2] )and Multi-Class classification (Object Detection) settings. To calculate it for Object Detection, you calculate the average precision for each class in your data based on your model predictions. Average precision is related to the area under the precision-recall curve for a class. Then Taking the mean of these average individual-class-precision gives you the Mean Average Precision. 
+
+### GIOU Loss:
+GIOU is a improved version of IoU loss
+In IoU, where there is no intersection, IoU has no value and therefore no gradient. GIoU however, is always differentiable.
+GIOU , which is formulated as follows:
+
+GIoU=|A∩B||A∪B|−|C∖(A∪B)||C|=IoU−|C∖(A∪B)||C|
+Where A and B are the prediction and ground truth bounding boxes. C is the smallest convex hull that encloses both A and B. 
+
 
 The following are plots 
 
