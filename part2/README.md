@@ -159,39 +159,38 @@ URL https://dl.fbaipublicfiles.com/detr/detr-r50-e632da11.pth'
 
 Hyperparameters:
 
-Number of queries: 30
+Number of queries: 40
 Learning Rate: 1e-5
 Number of classes: 140
 
 
 ## VI. Results:
 
-The training is still going on as of today, I took some model weights after 6th epoch and applied prediction on
-validation Dataset as below
+
 
 
 ### i.
 
 #### Ground truth with bounding boxes:
 
-![image1_g](/part2/images/image_1_ground_truth.png)
+![image1_g](/part2/images/image1_new_ground_truth.png)
 
 
 #### Predicted bounding boxes:
 
-![image1_p](/part2/images/image_1_predicted.png)
+![image1_p](/part2/images/image1_new_predicted.png)
 
 
 ### ii.
 
 #### Ground truth with bounding boxes:
 
-![image2_g](/part2/images/image_2_ground_truth.png)
+![image2_g](/part2/images/image1_new_ground_truth.png)
 
 
 #### Predicted bounding boxes:
 
-![image2_p](/part2/images/image_2_predicted.png)
+![image2_p](/part2/images/image2_new_predicted.png)
 
 
 
@@ -199,12 +198,12 @@ validation Dataset as below
 
 #### Ground truth with bounding boxes:
 
-![image3_g](/part2/images/image_3_ground_truth.png)
+![image3_g](/part2/images/image3_new_ground_truth.png)
 
 
 #### Predicted bounding boxes:
 
-![image3_p](/part2/images/image_3_predicted.png)
+![image3_p](/part2/images/image3_new_predicted.png)
 
 
 
@@ -212,24 +211,24 @@ validation Dataset as below
 
 #### Ground truth with bounding boxes:
 
-![image4_g](/part2/images/image_4_ground_truth.png)
+![image4_g](/part2/images/image4_new_ground_truth.png)
 
 
 #### Predicted bounding boxes:
 
-![image4_g](/part2/images/image_4_predicted.png)
+![image4_g](/part2/images/image4_new_predicted.png)
 
 
 ### v.
 
 #### Ground truth with bounding boxes:
 
-![image4_g](/part2/images/image_5_ground_truth.png)
+![image4_g](/part2/images/image5_new_ground_truth.png)
 
 
 #### Predicted bounding boxes:
 
-![image5_g](/part2/images/image_5_predicted.png)
+![image5_g](/part2/images/image5_new_predicted.png)
 
 
 
@@ -237,29 +236,29 @@ validation Dataset as below
 
 #### Ground truth with bounding boxes:
 
-![image6_g](/part2/images/image_6_ground_truth.png)
+![image6_g](/part2/images/image6_new_ground_truth.png)
 
 
 #### Predicted bounding boxes:
 
-![image6_g](/part2/images/image_6_predicted.png)
+![image6_g](/part2/images/image6_new_predicted.png)
 
 
 ### vii.
 
 #### Ground truth with bounding boxes:
 
-![image7_g](/part2/images/image_6_ground_truth.png)
+![image7_g](/part2/images/image7_new_ground_truth.png)
 
 
 #### Predicted bounding boxes:
 
-![image8_p](/part2/images/image_6_predicted.png)
+![image8_p](/part2/images/iimage7_new_predicted.png)
 
 
 ## VII. Evalutation Metrics Plots:
 
-The following are plots from 6th epoch
+The following are plots 
 
 ### i. Loss and mAP Plots
 
