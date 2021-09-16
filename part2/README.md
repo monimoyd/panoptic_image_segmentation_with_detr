@@ -30,8 +30,8 @@ Jupyter Notebook link:
 
 There are two notebooks:
 
-engineering_dataset_finetune_detr_train.ipynb : Used for training ( Training was still going on when I downloaded the notebook)
-engineering_dataset_finetune_detr_prediction.ipynb : Used for training ( I used checkpoint weights after 6th epoch)
+detr_engineering_materials_train.ipynb : Used for training 
+engineering_dataset_finetune_detr_prediction.ipynb : For prediction
 
 The trained model can be found in link below:
 
