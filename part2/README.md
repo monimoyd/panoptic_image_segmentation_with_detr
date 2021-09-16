@@ -299,18 +299,18 @@ The following are plots
 
 ### i. Loss and mAP Plots
 
-![image9](/part2/images/loss_plot.png)
+![image9](/part2/images/plot1_new.png)
 
 
 ### ii. Loss CE, Loss Bounding Box, Loss GIOU Plots
 
-![image12](/part2/images/loss_box_plot.png)
+![image12](/part2/images/plot2_new.png)
 
 
 
 ### iii. Class Error, Cardinality Error Unscaled plot Plot
 
-![image12](/part2/images/class_error_plot.png)
+![image12](/part2/images/plot3_new.png)
 
 
 
