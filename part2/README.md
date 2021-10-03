@@ -351,38 +351,38 @@ set_cost_class: 1
 
 Various metrics used are:
 
-### Loss:
 
-This is the total loss including classification loss, bounding box loss and giou loss
+Various metrics are: 
 
 ### mAP : 
 is Mean Average Precision. Its use is different in the field of Information Retrieval (Reference [1] [2] )and Multi-Class classification (Object Detection) settings. To calculate it for Object Detection, you calculate the average precision for each class in your data based on your model predictions. Average precision is related to the area under the precision-recall curve for a class. Then Taking the mean of these average individual-class-precision gives you the Mean Average Precision. 
 
-### GIOU Loss:
-GIOU is a improved version of IoU loss
-In IoU, where there is no intersection, IoU has no value and therefore no gradient. GIoU however, is always differentiable.
-GIOU , which is formulated as follows:
+## Cardinality Error:
+It is teh absolute error in the number of predicted non-empty boxes.  This is not really a loss
 
-GIoU=|A∩B||A∪B|−|C∖(A∪B)||C|=IoU−|C∖(A∪B)||C|
-Where A and B are the prediction and ground truth bounding boxes. C is the smallest convex hull that encloses both A and B. 
+## Class Error:
+
+Class error is measured below:
+100 - accuracy(source logits, target_classes)
+
 
 
 The following are plots 
 
 ### i. Loss and mAP Plots
 
-![image9](/part2/images/plot1_new.png)
+![image9](/images/plot1.png)
 
 
 ### ii. Loss CE, Loss Bounding Box, Loss GIOU Plots
 
-![image12](/part2/images/plot2_new.png)
+![image12](/images/plot2.png)
 
 
 
 ### iii. Class Error, Cardinality Error Unscaled plot Plot
 
-![image12](/part2/images/plot3_new.png)
+![image12](/images/plot3.png)
 
 
 
