@@ -9,9 +9,11 @@ Techinques to predict panoptic segmentation for Engineering materials
 In this project DETR model to first perform training for object detection and then done training for panoptic segmentation
  for Engineering materials 
 
-The dataset is available in link below:
+The dataset is available in link below.
 
 https://drive.google.com/file/d/1IsK268zLnXB2Qq0X2LgNDwBZRuVwvjRx/view?usp=sharing
+
+Images in the dataset are annotated with cvat tool
 
 
 Major Highlights:
@@ -30,9 +32,10 @@ git clone https://github.com/monimoyd/panoptic_image_segmentation_with_detr.git
 
 Jupyter Notebook link:
 
-There are two notebooks:
+There are three notebooks ( Because of large size, two notebooks giving the colab link):
 
 https://colab.research.google.com/drive/1pcyq_DZYr5OxonJseosyWq4p702hq3Yq?usp=sharing : Used for training bounding boxes
+https://github.com/monimoyd/panoptic_image_segmentation_with_detr/blob/main/detr_train_engineering_materials_summarized_panoptic2.ipynb : used for training panoptic segmentation
 https://colab.research.google.com/drive/1n0bIBnjlfRCK50BnTMKMfNsAgbbhrnaZ?usp=sharing : Used for prediction of panoptic segmentation
  
 ## II. DETR
@@ -95,8 +98,8 @@ Categories used for engineering dataset are as below:
 0 - Misc Stuff (these are all the Coco thing object predicted by DETR panoptic segmentation code  
 1-48 - Classes used for engineering materials  
 49 - 63 - Coco stuff labels are hirerachially organized where some of categories are grouped together
-          under super category. I have all the supercategories as classses these are : 
-		49. building  
+          under super category. I have all the supercategories as classses these are :   
+	49. building  
         50. ceiling  
         51. floor  
         52. food  
