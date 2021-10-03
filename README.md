@@ -135,7 +135,7 @@ While generating csv files, Any of the image which is grey images or images in W
 All the intermediate csv files are combined using into two jsons, custom-val.json and custom-train.json
 using Jupyter notebook. While combining all the csv files , each image is given a unique id with format category name concated with image id.
 
-## IV. Workflow
+## IV. Ground Truth Generation Workflow
 Workflow is explained using the diagram below:
 
 ![workflow](/part2/images/workflow.png) 
@@ -185,6 +185,8 @@ class weightage of 2 and all others are given weightage of 1.
 Once bounding boxes training is done for 50 epcochs, weigths are frozen and panoptic segmentation is done.
 
 Pantoptic segmentation can be visually explained using the image below:
+
+![arch_g](/images/arch.png)
 
 
 For running panoptic segmenation the following changes were done in detr code repository
