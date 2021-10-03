@@ -28,14 +28,14 @@ git clone https://github.com/monimoyd/panoptic_image_segmentation_with_detr.git
 
 Jupyter Notebook link:
 
-There are two notebooks:
+There are two notebooks (Becuase of large size sharing the colab link)
 
-detr_engineering_materials_train.ipynb : Used for training 
-engineering_dataset_finetune_detr_prediction.ipynb : For prediction
+https://colab.research.google.com/drive/1pcyq_DZYr5OxonJseosyWq4p702hq3Yq?usp=sharing : Used for training 
+https://colab.research.google.com/drive/11_CaOlQ_ON9KeNBaVNoY4hE3Gpi8eug8?usp=sharing : For prediction
 
 The trained model can be found in link below:
 
-https://drive.google.com/file/d/1U_X54jMYdghYmIqqfSCOSuYZbNl-VwPu/view?usp=sharing
+https://drive.google.com/file/d/1SHgGDvWyT5kvoWzno-WIPORyLl4rKpO-/view?usp=sharing
  
 ## II. DETR and Loss functions Used
 
@@ -100,7 +100,22 @@ Categories used for engineering dataset are as below:
 
 0 - Misc Stuff (these are all the Coco thing object predicted by DETR panoptic segmentation code  
 1-48 - Classes used for engineering materials  
-49 -140 - Coco Stuff objects mapped using the formula (coco stuff category id - 43). For example for banner category id is 49 which is category id 92 in Coco
+49 - 63 - Coco stuff labels are hirerachially organized where some of categories are grouped together under super category. I have all the supercategories as classses these are :
+    49. building  
+    50. ceiling  
+    51. floor
+    52. food
+    53. furniture
+    54. ground
+    55. plant
+    56. rawmaterial
+    57. sky
+    58. solid
+    59. structural
+    60. textile
+    61. wall
+    62. water
+    63. window
 
 
 For each annotation json provided for each category an intermediate csv file with fields as below:
@@ -117,13 +132,12 @@ area - Area of bounding box
 segment_polygon - Polygon coordinates for segments  
 
 
-As the engineering materials dataset does not  have all the stuff, so the coco validation stuff dataset is added for training and for this also an intermediate
-csv file is created
+As the engineering materials dataset does not  have all the stuff, so the coco validation stuff dataset is added for training and for this also an intermediate csv file is created
 
 While generating csv files, Any of the image which is not RGB  (like RGBA or grey image) or images in WEBP format are ignored.
 
 All the intermediate csv files are combined using into two jsons, custom-val.json and custom-train.json
-using Jupyter notebook. While combining al lthe csv files , each image is given a unique id with format category name concated with image id.
+using Jupyter notebook. While combining all the csv files , each image is given a unique id with format category name concated with image id.
 
 ## IV. Workflow
 Workflow is explained using the diagram below:
@@ -159,15 +173,51 @@ URL https://dl.fbaipublicfiles.com/detr/detr-r50-e632da11.pth'
 
 Hyperparameters:
 
-Number of queries: 40
+Number of queries: 30
 Learning Rate: 1e-5
-Number of classes: 140
+Number of classes: 64
 
 As the classes provided were imbalanced, To balance it during the training, I used the following techniques
 
-i. While adding images from Coco validation dataset, I made sure that number of objects for a particular category is limited to maximum 500
-ii. For minoryt classes, added more images from Coco training dataset
-iii. As misc_stuff category has more objects, I changed the class weight for the misc_stuff to 0.1 during training
+As the classes number of object classes were imbalanced, to solve this the following techniques are used:
+
+1. Number of objects per class is limited to 250 but multiple datasets are created so that all classes can be trained. While training 
+used all these processed datasets at different epochs
+3. Coco Stuff annnotations are added from Training dataset
+4. class weights are adjusted to give more weightage to minority classes and less weightage to majority classes. misc_stuff which has more than 10000 objects is given weightage of 0.1, any of the classes which has less than 100 objects is given class weightage of 2 and all others are given weightage of 1.
+
+Training boxes training is done for 50 epcochs during that time loss is very low
+
+## VI. Loss Functions used
+
+### CE Loss:
+
+This is the classification cross entropy loss between predicted class and actual class
+
+### L1 Loss
+
+This is the L1 regression loss between predicted and target bounding boxes
+
+### GIOU Loss:
+GIOU is a improved version of IoU loss
+In IoU, where there is no intersection, IoU has no value and therefore no gradient. GIoU however, is always differentiable.
+GIOU , which is formulated as follows:
+
+GIoU=|A∩B||A∪B|−|C∖(A∪B)||C|=IoU−|C∖(A∪B)||C|
+Where A and B are the prediction and ground truth bounding boxes. C is the smallest convex hull that encloses both A and B. 
+
+
+## Bounding Box Loss:
+
+Bounding Box Loss is a combination of L1 Loss and GIOU loss between predicted and target bounding boxes
+
+## Total Loss:
+Total Loss is combination of CE Loss, Bounding Box Loss and Mask Loss. During panoptic training, I used default loss weights during bounding box training 
+
+bbox_loss_coef: 5
+giou_loss_coef: 2
+set_cost_class: 1
+
 
 
 ## VI.  Results:
