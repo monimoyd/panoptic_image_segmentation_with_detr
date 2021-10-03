@@ -386,7 +386,7 @@ The following are plots from 6th epoch
 
 ### iii. Class Error, Cardinality Error Unscaled plot Plot
 
-![image12](/part2/images/class_error_plot.png)
+![image14](images/plot3.png)
 
 
 
