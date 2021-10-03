@@ -494,7 +494,7 @@ some time using methods like removing multiple backslash but I still could not r
 
 
 In this project I have learned how to prepare engineering materials dataset, right from image collection to annotation
-using CVT tool. Next, I cleaned and prepared dataset by applying DETR panoptic segmentation code to get ground truth for 
+using cvat tool. Next, I cleaned and prepared dataset by applying DETR panoptic segmentation code to get ground truth for 
 stuff. Next, I did fine tuning using DETR model. This project gave me exposure to end to end Object detection.
 
 
