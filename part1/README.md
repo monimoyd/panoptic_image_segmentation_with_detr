@@ -54,9 +54,9 @@ using ResNet5, followed by upsampling, followed by ResNet4 , followed by upsampl
 The steps are as below:
 
 i. Convolution network (RESNET 50) is used to extract the features from the input image
+ii. After object detection the model is frozen and used for panoptic segmentation
 
-ii. The features are given to multihead transformer, whose decoder uses pretrained object queries to generate low resolution attention maps. The pretrained object queries are generated while training bounding boxes for object detection and taking embedding for those objects having prediction threshold more than 0.85
-
+ii. The features are given to multihead transformer, whose decoder uses p object queries to generate low resolution attention maps. 
 iii. FPN style convolution network is used to convert low resolution attention maps to high resolution mask
 
 iv. All the high resolution masks are combined by the assigning each pixel value  the argmax corresponding to highest logits
