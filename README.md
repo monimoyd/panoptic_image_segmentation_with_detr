@@ -244,87 +244,44 @@ validation Dataset as below
 
 #### Ground truth with bounding boxes:
 
-![image1_g](/part2/images/image_1_ground_truth.png)
+![image1_g](/images/image1_ground_truth.png)
 
 
 #### Predicted bounding boxes:
 
-![image1_p](/part2/images/image_1_predicted.png)
+![image1_p](/images/image1_predicted_bbox.png)
+
+
+#### Attention Map:
+
+![image1_a](/images/image1_attention_map.png)
+
+#### Panoptic Segmentation:
+
+![image1_pa](/images/image1_panoptic.png)
 
 
 ### ii.
 
 #### Ground truth with bounding boxes:
 
-![image2_g](/part2/images/image_2_ground_truth.png)
+![image2_g](/images/image2_ground_truth.png)
 
 
 #### Predicted bounding boxes:
 
-![image2_p](/part2/images/image_2_predicted.png)
+![image2_p](/images/image2_predicted_bbox.png)
 
 
+#### Attention Map:
 
-### iii.
+![image1_a](/images/image2_attention_map.png)
 
-#### Ground truth with bounding boxes:
+#### Panoptic Segmentation:
 
-![image3_g](/part2/images/image_3_ground_truth.png)
-
-
-#### Predicted bounding boxes:
-
-![image3_p](/part2/images/image_3_predicted.png)
+![image1_pa](/images/image2_panoptic.png)
 
 
-
-### iv.
-
-#### Ground truth with bounding boxes:
-
-![image4_g](/part2/images/image_4_ground_truth.png)
-
-
-#### Predicted bounding boxes:
-
-![image4_g](/part2/images/image_4_predicted.png)
-
-
-### v.
-
-#### Ground truth with bounding boxes:
-
-![image4_g](/part2/images/image_5_ground_truth.png)
-
-
-#### Predicted bounding boxes:
-
-![image5_g](/part2/images/image_5_predicted.png)
-
-
-
-### vi.
-
-#### Ground truth with bounding boxes:
-
-![image6_g](/part2/images/image_6_ground_truth.png)
-
-
-#### Predicted bounding boxes:
-
-![image6_g](/part2/images/image_6_predicted.png)
-
-
-### vii.
-
-#### Ground truth with bounding boxes:
-
-![image7_g](/part2/images/image_6_ground_truth.png)
-
-
-#### Predicted bounding boxes:
-
-![image8_p](/part2/images/image_6_predicted.png)
 
 
 ## VII. Plots:
