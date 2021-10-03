@@ -207,8 +207,6 @@ main.py:
 
 This file is modified to change default weights
 
-
-
 The call for panoptic segmentation is done using the command below:
 
 ! python main.py \
@@ -252,7 +250,7 @@ Dice loss is a measure of overlap between two samples. This measure ranges from 
 Dice=2|A∩B| / (|A|+|B|)
 where |A∩B| represents the common elements between sets A and B, and |A| represents the number of elements in set A (and likewise for set B).
 
-### Local Loss:
+### Focal Loss:
 Focal Loss (FL) is an improved version of Cross-Entropy Loss (CE)  that tries to handle the class imbalance problem by assigning more weights to hard or easily misclassified examples  (i.e. background with noisy texture or partial object or the object of our interest ) and to down-weight easy examples (i.e. Background objects).
 
 So Focal Loss reduces the loss contribution from easy examples and increases the importance of correcting misclassified examples.
@@ -346,49 +344,25 @@ validation Dataset as below
 
 ![image4_pa](/images/image4_panoptic.png)
 
-
-
 ### v.
 
 #### Ground truth with bounding boxes:
 
-![image5_g](/images/image5_ground_truth.png)
+![image5_g](/images/image6_ground_truth.png)
 
 
 #### Predicted bounding boxes:
 
-![image5_p](/images/image5_predicted_bbox.png)
+![image5_p](/images/image6_predicted_bbox.png)
 
 
 #### Attention Mask:
 
-![image5_a](/images/image5_attention_mask.png)
+![image5_a](/images/image6_atteantion_mask.png)
 
 #### Panoptic Segmentation:
 
-![image5_pa](/images/image5_panoptic.png)
-
-
-### vi.
-
-#### Ground truth with bounding boxes:
-
-![image6_g](/images/image6_ground_truth.png)
-
-
-#### Predicted bounding boxes:
-
-![image6_p](/images/image6_predicted_bbox.png)
-
-
-#### Attention Mask:
-
-![image6_a](/images/image6_attention_mask.png)
-
-#### Panoptic Segmentation:
-
-![image6_pa](/images/image6_panoptic.png)
-
+![image5_pa](/images/image6_panoptic.png)
 
 
 
