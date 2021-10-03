@@ -163,7 +163,11 @@ As the combined image size is very large, it is split into multiple zip files an
 │  ├ annotations/custom_train.json  
 │  └ annotations/custom_val.json  
 ├ train2017/    # training images  
-└ val2017/      # validation images  
+└ val2017/      # validation images 
+
+DETR detection is explained visually in the diagram below:
+
+![arch](/part2/images/SETR_arch.png)
 
 
 
