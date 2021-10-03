@@ -192,6 +192,16 @@ Pantoptic segmentation can be visually explained using the image below:
 ![arch_g](/images/arch.png)
 
 
+The following directory structure is used for putting data during panoptic segmentation
+
+/content/data/custom  
+├ annotations/  # JSON annotations  
+│  ├ annotations/panoptic_train2017.json  
+│  └ annotations/panoptic_val2017.json  
+├ train2017/    # training images  
+└ val2017/      # validation images
+
+
 For running panoptic segmenation the following changes were done in detr code repository
 
 coco_panoptic.py :   
@@ -229,11 +239,13 @@ The call for panoptic segmentation is done using the command below:
   --batch_size 1
 
 
+
 Hyperparameters:
 
 Number of queries: 30
 Learning Rate: 1e-5
 Number of classes: 64
+Batch Size: 1
 
 ## VI. Loss Functions used
 
@@ -456,6 +468,24 @@ del checkpoint["model"]["query_embed.weight"]
 
 While checking the segmentation field in coco stuff annotation, I initially thought these are junk characters. After study
 and discussions, I realized these are mask encoded in RLE format
+
+### iv. Deformed Bounding Box Error
+
+There was a assertion error during training and it was because of deformed bounding boxes generated and some assert statement 
+for bounding box check was failing. To fix this issue, I run a sanity check on all the annotations for the followinng
+1. If summation of the left x value of bounding with annotation width exceeds image width, drop the annotation
+2. If summation of the left y value of bounding with annotation height exceeds image height, drop the annotation
+3. If there is any negative value in x,y, width or height drop the annotation
+
+
+### iv. Corruption of RLE data
+
+For the segmenation info, initially I was storing the RLE info as a compressed binary format. Because of intermediate csv step followed by 
+final json step, the segmentation info was stored as binary string. But when I load for panoptic segmenation, it got corrupted and I spent
+some time using methods like removing multiple backslash but I still could not recover. When the corruption happend, there was segmentation fault, core dumped and notebook crashed. So I need to regenerate the processed dataset again and this time I used running numbers as integers rather than binary and it worked
+
+
+
 
 
 
