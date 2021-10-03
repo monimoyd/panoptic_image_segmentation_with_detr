@@ -32,8 +32,8 @@ Jupyter Notebook link:
 
 There are two notebooks:
 
-engineering_dataset_finetune_detr_train.ipynb : Used for training 
-engineering_dataset_finetune_detr_prediction.ipynb : Used for training 
+https://colab.research.google.com/drive/1pcyq_DZYr5OxonJseosyWq4p702hq3Yq?usp=sharing : Used for training bounding boxes
+https://colab.research.google.com/drive/1n0bIBnjlfRCK50BnTMKMfNsAgbbhrnaZ?usp=sharing : Used for prediction of panoptic segmentation
  
 ## II. DETR
 
