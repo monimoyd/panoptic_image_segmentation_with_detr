@@ -232,7 +232,30 @@ Number of queries: 30
 Learning Rate: 1e-5
 Number of classes: 64
 
+## VI. Loss Functions used
 
+### CE Loss:
+
+This is the classification cross entropy loss between predicted class and actual class
+
+### GIOU Loss:
+GIOU is a improved version of IoU loss
+In IoU, where there is no intersection, IoU has no value and therefore no gradient. GIoU however, is always differentiable.
+GIOU , which is formulated as follows:
+
+GIoU=|A∩B||A∪B|−|C∖(A∪B)||C|=IoU−|C∖(A∪B)||C|
+Where A and B are the prediction and ground truth bounding boxes. C is the smallest convex hull that encloses both A and B. 
+
+### Dice Loss:
+Dice loss is a measure of overlap between two samples. This measure ranges from 0 to 1 where a Dice coefficient of 1 denotes perfect and complete overlap. The Dice coefficient was originally developed for binary data, and can be calculated as:
+
+Dice=2|A∩B| / (|A|+|B|)
+where |A∩B| represents the common elements between sets A and B, and |A| represents the number of elements in set A (and likewise for set B).
+
+### Local Loss:
+Focal Loss (FL) is an improved version of Cross-Entropy Loss (CE)  that tries to handle the class imbalance problem by assigning more weights to hard or easily misclassified examples  (i.e. background with noisy texture or partial object or the object of our interest ) and to down-weight easy examples (i.e. Background objects).
+
+So Focal Loss reduces the loss contribution from easy examples and increases the importance of correcting misclassified examples.
 
 ## VI. Results:
 
@@ -369,9 +392,20 @@ validation Dataset as below
 
 
 
-## VII. Plots:
+## VII. Evalutation Metrics Used and Plots:
 
-The following are plots from 6th epoch
+Various metrics are: 
+
+### mAP : 
+is Mean Average Precision. Its use is different in the field of Information Retrieval (Reference [1] [2] )and Multi-Class classification (Object Detection) settings. To calculate it for Object Detection, you calculate the average precision for each class in your data based on your model predictions. Average precision is related to the area under the precision-recall curve for a class. Then Taking the mean of these average individual-class-precision gives you the Mean Average Precision. 
+
+## Cardinality Error:
+It is teh absolute error in the number of predicted non-empty boxes.  This is not really a loss
+
+## Class Error:
+
+Class error is measured below:
+100 - accuracy(source logits, target_classes)
 
 ### i. Loss and mAP Plots
 
