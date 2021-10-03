@@ -32,11 +32,15 @@ git clone https://github.com/monimoyd/panoptic_image_segmentation_with_detr.git
 
 Jupyter Notebook link:
 
-There are three notebooks ( Because of large size, two notebooks giving the colab link):
+There are three notebooks (Because large size, for two notebooks, I am giving the colab link):
 
 https://colab.research.google.com/drive/1pcyq_DZYr5OxonJseosyWq4p702hq3Yq?usp=sharing : Used for training bounding boxes
-https://github.com/monimoyd/panoptic_image_segmentation_with_detr/blob/main/detr_train_engineering_materials_summarized_panoptic2.ipynb : used for training panoptic segmentation
+https://github.com/monimoyd/panoptic_image_segmentation_with_detr/blob/main/detr_train_engineering_materials_summarized_panoptic2.ipynb : Used for training panoptic segmentation
 https://colab.research.google.com/drive/1n0bIBnjlfRCK50BnTMKMfNsAgbbhrnaZ?usp=sharing : Used for prediction of panoptic segmentation
+
+Model wights are available in link below:
+
+https://drive.google.com/file/d/1D_EcdmUf8KhFIj33HIHwBu4tVsps8toF/view?usp=sharing
  
 ## II. DETR
 
