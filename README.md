@@ -241,6 +241,10 @@ Number of classes: 64
 
 This is the classification cross entropy loss between predicted class and actual class
 
+### L1 Loss
+
+This is the L1 regression loss between predicted and target bounding boxes
+
 ### GIOU Loss:
 GIOU is a improved version of IoU loss
 In IoU, where there is no intersection, IoU has no value and therefore no gradient. GIoU however, is always differentiable.
@@ -259,6 +263,27 @@ where |A∩B| represents the common elements between sets A and B, and |A| repre
 Focal Loss (FL) is an improved version of Cross-Entropy Loss (CE)  that tries to handle the class imbalance problem by assigning more weights to hard or easily misclassified examples  (i.e. background with noisy texture or partial object or the object of our interest ) and to down-weight easy examples (i.e. Background objects).
 
 So Focal Loss reduces the loss contribution from easy examples and increases the importance of correcting misclassified examples.
+
+
+## Bounding Box Loss:
+
+Bounding Box Loss is a combination of L1 Loss and GIOU loss between predicted and target bounding boxes
+
+## Mask Loss:
+
+Mask Loss is a combination of Focal Loss and Dice Loss
+
+## Total Loss:
+Total Loss is combination of CE Loss, Bounding Box Loss and Mask Loss. During panoptic training, I used weights different than default os as to 
+give more weighage to mask loss, CE loss and less weightabe to bounding box loss
+
+mask_loss_coef : 4
+bbox_loss_coef: 1
+dice_loss_coef: 2
+giou_loss_coef: 2
+set_cost_class: 3
+
+
 
 ## VI. Results:
 
