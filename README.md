@@ -254,7 +254,7 @@ validation Dataset as below
 
 #### Attention Map:
 
-![image1_a](/images/image1_attention_map.png)
+![image1_a](/images/image1_attention_mask.png)
 
 #### Panoptic Segmentation:
 
@@ -275,11 +275,11 @@ validation Dataset as below
 
 #### Attention Map:
 
-![image1_a](/images/image2_attention_map.png)
+![image2_a](/images/image2_attention_mask.png)
 
 #### Panoptic Segmentation:
 
-![image1_pa](/images/image2_panoptic.png)
+![image2_pa](/images/image2_panoptic.png)
 
 
 
