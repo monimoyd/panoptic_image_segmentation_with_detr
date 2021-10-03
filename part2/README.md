@@ -167,7 +167,7 @@ As the combined image size is very large, it is split into multiple zip files an
 
 DETR detection is explained visually in the diagram below:
 
-![arch](/part2/images/SETR_arch.png)
+![arch](/part2/images/DETR_arch.png)
 
 
 
