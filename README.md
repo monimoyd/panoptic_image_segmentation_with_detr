@@ -252,7 +252,7 @@ validation Dataset as below
 ![image1_p](/images/image1_predicted_bbox.png)
 
 
-#### Attention Map:
+#### Attention Mask:
 
 ![image1_a](/images/image1_attention_mask.png)
 
@@ -273,13 +273,98 @@ validation Dataset as below
 ![image2_p](/images/image2_predicted_bbox.png)
 
 
-#### Attention Map:
+#### Attention Mask:
 
 ![image2_a](/images/image2_attention_mask.png)
 
 #### Panoptic Segmentation:
 
-![image2_pa](/images/image2_panoptic.png)
+![image2_pa](/images/image2_panoptic_segmentation.png)
+
+
+### iii.
+
+#### Ground truth with bounding boxes:
+
+![image3_g](/images/image3_ground_truth.png)
+
+
+#### Predicted bounding boxes:
+
+![image3_p](/images/image3_predicted_bbox.png)
+
+
+#### Attention Mask:
+
+![image3_a](/images/image3_attention_mask.png)
+
+#### Panoptic Segmentation:
+
+![image3_pa](/images/image3_panoptic.png)
+
+
+### iv.
+
+#### Ground truth with bounding boxes:
+
+![image4_g](/images/image4_ground_truth.png)
+
+
+#### Predicted bounding boxes:
+
+![image4_p](/images/image4_predicted_bbox.png)
+
+
+#### Attention Mask:
+
+![image4_a](/images/image4_attention_mask.png)
+
+#### Panoptic Segmentation:
+
+![image4_pa](/images/image4_panoptic.png)
+
+
+
+### v.
+
+#### Ground truth with bounding boxes:
+
+![image5_g](/images/image5_ground_truth.png)
+
+
+#### Predicted bounding boxes:
+
+![image5_p](/images/image5_predicted_bbox.png)
+
+
+#### Attention Mask:
+
+![image5_a](/images/image5_attention_mask.png)
+
+#### Panoptic Segmentation:
+
+![image5_pa](/images/image5_panoptic.png)
+
+
+### vi.
+
+#### Ground truth with bounding boxes:
+
+![image6_g](/images/image6_ground_truth.png)
+
+
+#### Predicted bounding boxes:
+
+![image6_p](/images/image6_predicted_bbox.png)
+
+
+#### Attention Mask:
+
+![image6_a](/images/image6_attention_mask.png)
+
+#### Panoptic Segmentation:
+
+![image6_pa](/images/image6_panoptic.png)
 
 
 
@@ -290,12 +375,12 @@ The following are plots from 6th epoch
 
 ### i. Loss and mAP Plots
 
-![image9](/part2/images/loss_plot.png)
+![image9](/images/plot1.png)
 
 
 ### ii. Loss CE, Loss Bounding Box, Loss GIOU Plots
 
-![image12](/part2/images/loss_box_plot.png)
+![image12](/images/plot2.png)
 
 
 
